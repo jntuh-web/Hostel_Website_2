@@ -1,0 +1,11 @@
+.homeHeading{
+    background-image: url("../../images/1.jpg");
+    height: 80vh;  
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(253, 249, 249);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
