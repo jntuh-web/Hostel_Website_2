@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-import Room from "./Rooms";
+const Room = require("./Rooms")
 
 const allocatedSchema = mongoose.Schema({
     room_id: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.String,
         ref: 'Room',
         required: true,
     },
@@ -15,4 +15,4 @@ const allocatedSchema = mongoose.Schema({
 
 }, { timestamps: true })
 
-module.exports = mongoose.module("Allocated", allocatedSchema);
+module.exports = mongoose.model("Allocated", allocatedSchema);
