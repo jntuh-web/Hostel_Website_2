@@ -18,10 +18,10 @@ const newAllocRouter = require("./Routes/newAllocation");
 const complaints = require("./Routes/complaints")
 const bonofides = require("./Routes/bonofides")
 
-//mongodb+srv://jntuh-ucesth:XrnpuRvXoT8WN9bM@cluster0.3mjnvj0.mongodb.net/
+
 app.use(express.json())
 app.use(cors());
-mongoose.connect("mongodb+srv://jntuh-ucesth:0B68Khs8MR2pOhyL@cluster0.3mjnvj0.mongodb.net/", {
+mongoose.connect("Mongo Uri", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(console.log("Connection succesful"))
