@@ -6,6 +6,27 @@ const complaintSchema = new mongoose.Schema({
         ref: 'Student',
         required: true
     },
+    complainedStudentName : {
+        type:String,
+
+        required:true
+    },
+    
+    complainedStudentRoll:{
+        type:String,
+        required:true
+    },
+
+    room:{
+        type:Number,
+        required:true
+    },
+
+    hostel:{
+        type:String,
+        required:true
+    },
+
 
     complaint: {
         type: String,

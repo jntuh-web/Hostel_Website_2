@@ -75,6 +75,18 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+router.get('/:id',async(req,res)=>{
+  try{
+    const student=await Student.findById(req.params.id)
+    return res.status(200).json(student);
+  }
+  catch(e){
+    console.log(e)
+  }
+
+})
+
 router.put('/:id', async (req, res) => {
   try {
     const updateStudent = await Student.findByIdAndUpdate(
