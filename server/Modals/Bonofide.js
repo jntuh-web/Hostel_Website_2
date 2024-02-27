@@ -18,9 +18,9 @@ const bonofideSchema = new mongoose.Schema({
         type: String,
         default: "Unverified"
     },
-    DateOfRequest: {
-        type: Date,
-        required: true
-    }
+    // DateOfRequest: {
+    //     type: Date,
+    //     required: true
+    // }
 })
 module.exports = mongoose.model("Bonofide", bonofideSchema)

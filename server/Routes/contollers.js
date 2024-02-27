@@ -115,17 +115,12 @@ exports.createNewVendor = async (req, res) => {
 }
 
 exports.createNewRoom = async (req, res) => {
-    // try {
     const { data } = req.body;
     const Room = await Roommodal.create(data);
     res.status(200).json({
         sucess: true,
         message: "Data added sucessfully"
     })
-    // }
-    // catch (err) {
-    //     console.log(err);
-    // }
 }
 
 exports.getAllRooms = async (req, res) => {
@@ -150,7 +145,7 @@ exports.updateRoom = async (req, res) => {
     const { id } = req.params;
     const { data } = req.body;
 
-    const Room = await Roommodal.findOneAndUpdate({ _id: id }, { $set: { ...data } }, { new: true })
+    const Room = await Roommodal.findOneAndUpdate({ room_id: id }, { $set: { ...data } }, { new: true })
     try {
         if (!Room) {
             res.status(404).json({

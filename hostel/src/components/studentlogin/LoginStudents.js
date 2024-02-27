@@ -33,7 +33,7 @@ function LoginStudents() {
     <div className="mt-5 login-form-container">
       <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
         <div className="heading m-auto">
-          <img src={logo} width="50px" alt="" className='rounded-circle'/>
+          <img src={logo} width="50px" alt="" className='rounded-circle' />
           <h3 className="text-center">SignIn/Login</h3>
         </div>
         <div className="input-container">

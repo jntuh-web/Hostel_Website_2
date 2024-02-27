@@ -42,9 +42,9 @@ const complaintSchema = new mongoose.Schema({
         type: String,
         default: "Unsolved"
     },
-    DateOfRequest: {
-        type: Date,
-        required: true
-    }
+    // DateOfRequest: {
+    //     type: Date,
+    //     required: true
+    // }
 })
 module.exports = mongoose.model("Complaint", complaintSchema)

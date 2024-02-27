@@ -16,8 +16,9 @@ import StudentPage from "./components/studentpage/StudentPage";
 import Payments from "./components/payments/Payments";
 import Bonafides from "./components/bonafides/Bonafides"
 import NavBar from './components/navbar/NavBar'
+import Room from './components/rooms/room.jsx'
 
-//import Bonafides from "./components/bonafides/Bonafides";
+// import Bonafides from "./components/bonafides/Bonafides";
 
 import About from "./components/about/About";
 import Complaints from "./components/complaints/Complaints";
@@ -45,6 +46,11 @@ function App() {
           path: "/wardens",
           element: <Wardens />,
         },
+
+        {
+          path: "/room",
+          element: <Room />,
+        },
         {
           path: "/student/:id",
           element: <StudentPage />,
@@ -64,7 +70,7 @@ function App() {
             {
               path: "/student/:id/",
               element: <About />,
-            },
+            }
           ],
         },
       ],
@@ -73,7 +79,7 @@ function App() {
   return (
     <div className="">
       <>
-        
+
         <RouterProvider router={router} />
       </>
     </div>

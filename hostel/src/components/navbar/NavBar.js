@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function NavBar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-sm bg-body-tertiary bg-dark rounded fixed-top">
+      <nav className="navbar navbar-expand-sm bg-body-tertiary bg-dark rounded">
         <div className="container-fluid">
           <a className="navbar-brand" href="#Home">
             <div className="logo-content">
@@ -41,11 +41,16 @@ function NavBar() {
                   SignIn
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/Room">
+                  Room
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
-      
+
     </div>
   );
 }

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Hostle =require("./Hostle");
+const Hostle = require("./Hostle");
 
 const roomSchema = mongoose.Schema({
     room_id: {
@@ -8,7 +8,7 @@ const roomSchema = mongoose.Schema({
         unique: true,
     },
     block_name: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.String,
         ref: 'Hostle',
         required: true,
     },
