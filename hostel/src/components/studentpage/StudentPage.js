@@ -3,12 +3,12 @@ import { FaBars, FaUserAlt, FaCommentAlt } from "react-icons/fa";
 import { MdPayments } from "react-icons/md";
 import { AiFillFile } from "react-icons/ai";
 import { IoLogOutSharp } from "react-icons/io5";
-import { Link, Outlet } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Link, Outlet,useNavigate } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import "./StudentPage.css";
-const StudentPage = () => {
-  
+const StudentPage = (props) => {
   let para=useParams();
+  let navigate=useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const returnClass = () => {
@@ -18,6 +18,12 @@ const StudentPage = () => {
   const returnClass2 = () => {
     return isOpen ? "sidebar-open" : "sidebar-close";
   };
+
+  const onClickLogoutBtn=() => {
+    navigate('/')
+
+  };
+
   const menuItem = [
     {
       path: `/student/${para.id}/`,
@@ -78,34 +84,23 @@ const StudentPage = () => {
                 </div>
               </Link>
             ))}
-            <div
-              className="profile"
-              style={{ width: isOpen ? "350px" : "60px" }}
-            >
-              <div className="profile_details">
-                <img
-                  style={{ display: isOpen ? "block" : "none" }}
-                  src=""
-                  alt="profile"
-                />
-                <div className="profile_content">
-                  <div
-                    className="name"
-                    style={{ display: isOpen ? "block" : "none" }}
-                  >
-                    Shravya
-                  </div>
-                  <div
-                    className="designation"
-                    style={{ display: isOpen ? "block" : "none" }}
-                  >
-                    student
-                  </div>
-                </div>
-              </div>
-              
-            </div>
+            
           </div>
+          <button type="button" className="logout-btn" onClick={onClickLogoutBtn}>
+            <div className="logout-con">
+          <div className="icon " title="logout" >
+                  <IoLogOutSharp/>
+                </div>
+                <div
+                  style={{ display: isOpen ? "block" : "none" }}
+                  className="link_text"
+                >
+                  logout
+                </div>
+                </div>
+          </button>
+
+
         </div>
       </div>
       <main className={returnClass2()}>
@@ -115,4 +110,4 @@ const StudentPage = () => {
   );
 };
 
-export default StudentPage;
+export default (StudentPage);
